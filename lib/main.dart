@@ -38,7 +38,23 @@ class _MyAppState extends State<MyApp> {
                   });
                 },
                 value: isChecked,
-              )
+              ),
+              RadioListTile(
+                title: Text('Radio button 1'),
+                value: 'Value',
+                groupValue: 'groupValue',
+                onChanged: ((value) {
+                  print(value);
+                }),
+              ),
+              RadioListTile(
+                title: Text('Radio button 2'),
+                value: 'Value',
+                groupValue: 'groupValue',
+                onChanged: ((value) {
+                  print(value);
+                }),
+              ),
             ],
           ),
         ),
