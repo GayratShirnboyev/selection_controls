@@ -68,6 +68,8 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text('Get Radio')),
               Slider(
+                  max: 100,
+                  divisions: 10,
                   value: sliderValue,
                   onChanged: ((value) {
                     setState(() {
