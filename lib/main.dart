@@ -64,12 +64,15 @@ class _MyAppState extends State<MyApp> {
               ElevatedButton(
                   onPressed: () {
                     print(price);
+                    print(sliderValue);
                   },
                   child: Text('Get Radio')),
               Slider(
                   value: sliderValue,
                   onChanged: ((value) {
-                    print(value);
+                    setState(() {
+                      sliderValue = value;
+                    });
                   }))
             ],
           ),
