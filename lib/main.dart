@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool isChecked = false;
   String? price;
+  double sliderValue = 0.0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -64,7 +65,12 @@ class _MyAppState extends State<MyApp> {
                   onPressed: () {
                     print(price);
                   },
-                  child: Text('Get Radio'))
+                  child: Text('Get Radio')),
+              Slider(
+                  value: sliderValue,
+                  onChanged: ((value) {
+                    print(value);
+                  }))
             ],
           ),
         ),
