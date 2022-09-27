@@ -33,7 +33,9 @@ class _MyAppState extends State<MyApp> {
               ),
               Switch(
                 onChanged: (value) {
-                  print(value);
+                  setState(() {
+                    isChecked = !isChecked;
+                  });
                 },
                 value: isChecked,
               )
