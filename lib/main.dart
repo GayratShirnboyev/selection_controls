@@ -17,15 +17,27 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Container(
-          child: Checkbox(
-            value: isChecked,
-            onChanged: (value) {
-              setState(() {
-                isChecked = !isChecked;
-                print(isChecked);
-              });
-            },
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Checkbox(
+                value: isChecked,
+                onChanged: (value) {
+                  print(value);
+                  setState(() {
+                    isChecked = !isChecked;
+                    print(isChecked);
+                  });
+                },
+              ),
+              Switch(
+                onChanged: (value) {
+                  print(value);
+                },
+                value: isChecked,
+              )
+            ],
           ),
         ),
       ),
