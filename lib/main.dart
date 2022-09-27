@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool isChecked = false;
+  String? price;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,20 +42,29 @@ class _MyAppState extends State<MyApp> {
               ),
               RadioListTile(
                 title: Text('Radio button 1'),
-                value: 'Value',
-                groupValue: 'groupValue',
+                value: '100',
+                groupValue: price,
                 onChanged: ((value) {
-                  print(value);
+                  setState(() {
+                    price = value.toString();
+                  });
                 }),
               ),
               RadioListTile(
                 title: Text('Radio button 2'),
-                value: 'Value',
-                groupValue: 'groupValue',
+                value: '200',
+                groupValue: price,
                 onChanged: ((value) {
-                  print(value);
+                  setState(() {
+                    price = value.toString();
+                  });
                 }),
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    print(price);
+                  },
+                  child: Text('Get Radio'))
             ],
           ),
         ),
