@@ -15,6 +15,9 @@ class _MyAppState extends State<MyApp> {
   bool isChecked = false;
   String? price;
   double sliderValue = 0.0;
+
+  List<Widget> fruits = <Widget>[Text('Apple'), Text('Banana'), Text('Orange')];
+  final List<bool> _selected = <bool>[true, false, false];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -75,7 +78,14 @@ class _MyAppState extends State<MyApp> {
                     setState(() {
                       sliderValue = value;
                     });
-                  }))
+                  })),
+              ToggleButtons(
+                children: fruits,
+                isSelected: _selected,
+                onPressed: (index) {
+                  print(index);
+                },
+              )
             ],
           ),
         ),
