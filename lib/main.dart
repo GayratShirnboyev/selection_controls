@@ -84,8 +84,10 @@ class _MyAppState extends State<MyApp> {
                 isSelected: _selected,
                 onPressed: (index) {
                   print(index);
+                  _selected = [false, false, false];
+
                   setState(() {
-                    _selected = [false, true, false];
+                    _selected[index] = true;
                   });
                 },
               )
